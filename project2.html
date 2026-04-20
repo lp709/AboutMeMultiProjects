@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="PT-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Counter Project</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1e7e34;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 20px auto 0;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #counter {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Interactive Counter</h1>
+        <p>Use the buttons below to increase or decrease the number:</p>
+        <div id="counter">0</div>
+        <button id="increaseBtn">Increase</button>
+        <button id="decreaseBtn">Decrease</button>
+        <a class="back-btn" href="index02.html">Back to Projects</a>
+    </div>
+
+    <script>
+        const counterDisplay = document.getElementById('counter');
+        const increaseBtn = document.getElementById('increaseBtn');
+        const decreaseBtn = document.getElementById('decreaseBtn');
+        let count = 0;
+
+        increaseBtn.addEventListener('click', () => {
+            count++;
+            counterDisplay.innerText = count;
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            count--;
+            counterDisplay.innerText = count;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html lang="PT-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini HTML/CSS Quiz</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #117a8b;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 20px auto 0;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Mini HTML/CSS Quiz</h1>
+        <p>Which tag is used for a paragraph in HTML?</p>
+        <button class="answer-btn" data-correct="false">&lt;div&gt;</button>
+        <button class="answer-btn" data-correct="true">&lt;p&gt;</button>
+        <button class="answer-btn" data-correct="false">&lt;span&gt;</button>
+        <div id="result"></div>
+        <a class="back-btn" href="index02.html">Back to Projects</a>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.answer-btn');
+        const resultDiv = document.getElementById('result');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if(button.dataset.correct === "true") {
+                    resultDiv.innerText = "🎉 Correct! <p> is for paragraphs.";
+                    resultDiv.style.color = "green";
+                } else {
+                    resultDiv.innerText = "❌ Wrong! Try again.";
+                    resultDiv.style.color = "red";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

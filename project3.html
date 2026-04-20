@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="PT-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 50px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        button {
+            background-color: #ffc107;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #e0a800;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 20px auto 0;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Guess the Number</h1>
+        <p>Guess a number between 1 and 10:</p>
+        <input type="number" id="guessInput" min="1" max="10">
+        <button id="guessBtn">Guess!</button>
+        <div id="result"></div>
+        <a class="back-btn" href="index02.html">Back to Projects</a>
+    </div>
+
+    <script>
+        const guessBtn = document.getElementById('guessBtn');
+        const guessInput = document.getElementById('guessInput');
+        const resultDiv = document.getElementById('result');
+
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+        guessBtn.addEventListener('click', () => {
+            const userGuess = parseInt(guessInput.value);
+            if(userGuess === randomNumber) {
+                resultDiv.innerText = '🎉 Correct! You guessed the number!';
+            } else if(userGuess < randomNumber) {
+                resultDiv.innerText = 'Too low! Try again.';
+            } else {
+                resultDiv.innerText = 'Too high! Try again.';
+            }
+        });
+    </script>
+</body>
+</html>
