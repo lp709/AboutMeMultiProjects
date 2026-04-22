@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="PT-PT">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/android-chrome-192x192.png" type="image/x-icon">
     <title>Relógio Digital | My Project</title>
     <style>
         body {
@@ -14,38 +16,39 @@
             min-height: 100vh;
             margin: 0;
         }
-
+        
         .card {
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             padding: 40px 30px;
             width: 90%;
             max-width: 400px;
             text-align: center;
         }
-
+        
         h1 {
             margin-bottom: 25px;
             color: #333;
             font-size: 1.5rem;
         }
-
         /* Estilo do Relógio */
+        
         #clock {
             font-size: 3.5rem;
             font-weight: bold;
             color: #17a2b8;
-            font-family: 'Courier New', Courier, monospace; /* Toque digital */
+            font-family: 'Courier New', Courier, monospace;
+            /* Toque digital */
             margin-bottom: 10px;
         }
-
+        
         #date {
             color: #666;
             margin-bottom: 30px;
             font-size: 1.1rem;
         }
-
+        
         .back-btn {
             display: inline-block;
             margin-top: 10px;
@@ -57,44 +60,50 @@
             border-radius: 5px;
             transition: 0.3s;
         }
-
+        
         .back-btn:hover {
             background-color: black;
             color: white;
         }
     </style>
 </head>
+
 <body>
 
     <div class="card">
         <h1>Hora Atual</h1>
-        
+
         <!-- Display do Relógio -->
         <div id="clock">00:00:00</div>
         <div id="date">Carregando data...</div>
-        
+
         <a class="back-btn" href="index02.html">Back to Projects</a>
     </div>
 
     <script>
         function updateClock() {
             const now = new Date();
-            
+
             // Extrair horas, minutos e segundos
             let h = now.getHours();
             let m = now.getMinutes();
             let s = now.getSeconds();
-            
+
             // Adicionar zero à esquerda se for menor que 10
             h = h < 10 ? "0" + h : h;
             m = m < 10 ? "0" + m : m;
             s = s < 10 ? "0" + s : s;
-            
+
             // Atualizar o texto do relógio
             document.getElementById('clock').innerText = `${h}:${m}:${s}`;
-            
+
             // Atualizar a data (opcional)
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
             document.getElementById('date').innerText = now.toLocaleDateString('pt-PT', options);
         }
 
@@ -105,4 +114,5 @@
         updateClock();
     </script>
 </body>
+
 </html>

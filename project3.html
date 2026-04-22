@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="PT-PT">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/android-chrome-192x192.png" type="image/x-icon">
     <title>Guess the Number Game</title>
     <style>
         body {
@@ -13,24 +15,24 @@
             align-items: center;
             height: 100vh;
         }
-
+        
         .card {
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             padding: 30px;
             width: 350px;
             text-align: center;
         }
-
+        
         h1 {
             margin-bottom: 20px;
         }
-
+        
         p {
             margin-bottom: 20px;
         }
-
+        
         input {
             padding: 10px;
             width: 50px;
@@ -39,7 +41,7 @@
             border: 1px solid #ccc;
             text-align: center;
         }
-
+        
         button {
             background-color: #ffc107;
             color: black;
@@ -50,11 +52,11 @@
             margin: 5px;
             transition: 0.3s;
         }
-
+        
         button:hover {
             background-color: #e0a800;
         }
-
+        
         .back-btn {
             display: block;
             margin: 20px auto 0;
@@ -67,18 +69,19 @@
             text-align: center;
             transition: 0.3s;
         }
-
+        
         .back-btn:hover {
             background-color: black;
             color: white;
         }
-
+        
         #result {
             margin-top: 15px;
             font-weight: bold;
         }
     </style>
 </head>
+
 <body>
     <div class="card">
         <h1>Guess the Number</h1>
@@ -98,9 +101,9 @@
 
         guessBtn.addEventListener('click', () => {
             const userGuess = parseInt(guessInput.value);
-            if(userGuess === randomNumber) {
+            if (userGuess === randomNumber) {
                 resultDiv.innerText = '🎉 Correct! You guessed the number!';
-            } else if(userGuess < randomNumber) {
+            } else if (userGuess < randomNumber) {
                 resultDiv.innerText = 'Too low! Try again.';
             } else {
                 resultDiv.innerText = 'Too high! Try again.';
@@ -108,4 +111,5 @@
         });
     </script>
 </body>
+
 </html>
